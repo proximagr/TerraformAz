@@ -2,10 +2,6 @@
 *.tfstate.backup
 *.tfvars
 *.tfplan
-terraform-provider-azurerm_v3.54.0_x5
-.terraform/providers/registry.terraform.io/hashicorp/azurerm/3.54.0/linux_amd64/terraform-provider-azurerm_v3.54.0_x5
-**/.terraform/*
-C:\Users\papostolidis\OneDrive\VSCODE\TerraformBootcamp\.terraform\providers
-**/.terraform/*
-.terraform\providers
+.terraform.lock.hcl
+.terraform/
 ```
