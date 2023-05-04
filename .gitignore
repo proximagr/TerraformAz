@@ -3,5 +3,6 @@
 *.tfvars
 *.tfplan
 .terraform.lock.hcl
+*.lock.hcl
 .terraform/
 ```
