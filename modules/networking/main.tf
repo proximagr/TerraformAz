@@ -14,10 +14,17 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes       = ["10.0.0.0/24"]
 }
 
-//associate the subnet with the nsg
+//declare the nsg module
+module "nsg" {
+  source              = "../nsg"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+}
+
+//associate the subnet with the network secuirty group in the nsg module
 resource "azurerm_subnet_network_security_group_association" "subnet_nsg_association" {
   subnet_id                 = azurerm_subnet.subnet.id
-  network_security_group_id = modules.nsg.nsg_id
+  network_security_group_id = module.nsg.nsg_id
 }
 
 # Path: modules\networking\main.tf
